@@ -63,7 +63,7 @@ export default function About() {
                       Hammad Zahid
                     </p>
                     <p className="mt-1 px-8 font-mono text-xs text-muted">
-                      drop your photo at /public/profile.jpg
+                      drop your photo at /public/me.jpeg
                     </p>
                   </div>
                 </div>
@@ -89,7 +89,7 @@ export default function About() {
           <div className="relative mx-auto block aspect-square w-full max-w-[260px] overflow-hidden rounded-2xl border border-border-accent bg-surface md:hidden">
             {!imgError ? (
               <img
-                src="/profile.jpg"
+                src="/me.jpeg"
                 alt="Hammad Zahid"
                 onError={() => setImgError(true)}
                 loading="lazy"
@@ -99,7 +99,7 @@ export default function About() {
               <div className="flex h-full w-full flex-col items-center justify-center gap-3 bg-gradient-to-br from-surface to-surface-2">
                 <User size={32} className="text-accent" />
                 <p className="font-mono text-xs text-muted">
-                  drop your photo at /public/profile.jpg
+                  drop your photo at /public/me.jpeg
                 </p>
               </div>
             )}
