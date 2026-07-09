@@ -173,14 +173,29 @@ export default function NodeGraphBackground() {
       mouse.y = -9999;
     }
 
-    function handleVisibilityChange() {
-      running = !document.hidden;
+    function setRunning(next: boolean) {
+      if (next === running) return;
+      running = next;
       if (running) {
         animationId = requestAnimationFrame(draw);
       } else {
         cancelAnimationFrame(animationId);
       }
     }
+
+    function handleVisibilityChange() {
+      setRunning(!document.hidden && isIntersecting);
+    }
+
+    let isIntersecting = true;
+    const intersectionObserver = new IntersectionObserver(
+      ([entry]) => {
+        isIntersecting = entry.isIntersecting;
+        setRunning(entry.isIntersecting && !document.hidden);
+      },
+      { threshold: 0 }
+    );
+    intersectionObserver.observe(canvas);
 
     resize();
     draw();
@@ -194,6 +209,7 @@ export default function NodeGraphBackground() {
       running = false;
       cancelAnimationFrame(animationId);
       clearTimeout(resizeTimeout);
+      intersectionObserver.disconnect();
       window.removeEventListener("resize", debouncedResize);
       document.removeEventListener("visibilitychange", handleVisibilityChange);
       canvas.removeEventListener("mousemove", handleMouseMove);

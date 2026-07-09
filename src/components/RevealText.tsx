@@ -1,7 +1,7 @@
 "use client";
 
+import { useEffect, useState, ElementType } from "react";
 import { motion } from "framer-motion";
-import { ElementType } from "react";
 
 const container = {
   hidden: {},
@@ -31,6 +31,27 @@ export default function RevealText({
 }) {
   const words = text.split(" ");
   const Tag = as;
+  const [isTouch, setIsTouch] = useState(false);
+
+  useEffect(() => {
+    setIsTouch(window.matchMedia("(pointer: coarse)").matches);
+  }, []);
+
+  if (isTouch) {
+    return (
+      <Tag className={className}>
+        <motion.span
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.5, delay }}
+          className="inline-block"
+        >
+          {text}
+        </motion.span>
+      </Tag>
+    );
+  }
 
   return (
     <Tag className={className}>
@@ -45,10 +66,14 @@ export default function RevealText({
         className="inline"
       >
         {words.map((word, i) => (
-          <span key={i} className="inline-block overflow-hidden">
+          <span
+            key={i}
+            className={`inline-block overflow-hidden ${
+              i < words.length - 1 ? "mr-[0.28em]" : ""
+            }`}
+          >
             <motion.span variants={wordVariant} className="inline-block">
               {word}
-              {i < words.length - 1 ? " " : ""}
             </motion.span>
           </span>
         ))}
