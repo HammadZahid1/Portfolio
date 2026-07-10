@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Calendar } from "lucide-react";
+import { Menu, X, Calendar, PlayCircle } from "lucide-react";
 
 const links = [
   { label: "Services", href: "#services", id: "services" },
@@ -97,13 +97,22 @@ export default function Navbar() {
           ))}
         </div>
 
-        <a
-          href="#booking"
-          className="hidden items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-black transition-colors hover:bg-accent-light md:inline-flex"
-        >
-          <Calendar size={15} />
-          Book a Call
-        </a>
+        <div className="hidden items-center gap-3 md:flex">
+          <a
+            href="/demo"
+            className="inline-flex items-center gap-2 rounded-full border border-border-accent px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
+          >
+            <PlayCircle size={15} />
+            See the Demo
+          </a>
+          <a
+            href="#booking"
+            className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-black transition-colors hover:bg-accent-light"
+          >
+            <Calendar size={15} />
+            Book a Call
+          </a>
+        </div>
 
         <button
           onClick={() => setOpen(!open)}
@@ -139,9 +148,17 @@ export default function Navbar() {
                 </a>
               ))}
               <a
+                href="/demo"
+                onClick={() => setOpen(false)}
+                className="mt-2 inline-flex items-center justify-center gap-2 rounded-full border border-border-accent px-5 py-3 text-sm font-medium text-foreground"
+              >
+                <PlayCircle size={15} />
+                See the Demo
+              </a>
+              <a
                 href="#booking"
                 onClick={() => setOpen(false)}
-                className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-medium text-black"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-medium text-black"
               >
                 <Calendar size={15} />
                 Book a Call

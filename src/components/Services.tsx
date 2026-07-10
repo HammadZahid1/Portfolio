@@ -10,6 +10,7 @@ import {
   ArrowUpRight,
   MessageSquareText,
   BarChart3,
+  PlayCircle,
 } from "lucide-react";
 import RevealText from "./RevealText";
 import TiltCard from "./TiltCard";
@@ -103,16 +104,25 @@ export default function Services() {
               monthly retainer as your operations scale.
             </p>
           </div>
-          <a
-            href="#booking"
-            className="group/btn inline-flex shrink-0 items-center gap-2 self-start rounded-full bg-accent px-6 py-3 font-medium text-black transition-colors hover:bg-accent-light"
-          >
-            Automate My Business
-            <ArrowUpRight
-              size={16}
-              className="transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5"
-            />
-          </a>
+          <div className="flex shrink-0 flex-col items-start gap-3 self-start">
+            <a
+              href="#booking"
+              className="group/btn inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 font-medium text-black transition-colors hover:bg-accent-light"
+            >
+              Automate My Business
+              <ArrowUpRight
+                size={16}
+                className="transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5"
+              />
+            </a>
+            <a
+              href="/demo"
+              className="group/btn2 inline-flex items-center gap-2 rounded-full border border-border-accent px-6 py-3 font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
+            >
+              <PlayCircle size={16} />
+              See a Live Demo
+            </a>
+          </div>
         </div>
       </motion.div>
 

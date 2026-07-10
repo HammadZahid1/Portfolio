@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(npx --yes create-next-app@latest . --ts --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm --no-turbopack)",
-      "Bash(npx tsc *)"
+      "Bash(npx tsc *)",
+      "WebSearch",
+      "Bash(git add *)"
     ]
   }
 }
