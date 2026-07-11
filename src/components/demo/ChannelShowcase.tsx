@@ -32,12 +32,6 @@ const tabs = [
     blurb:
       "Your Facebook or Instagram lead ad gets a form fill, and now there's a five-minute window before that person moves on with their day and stops thinking about selling.",
   },
-  {
-    id: "linkedin",
-    label: "LinkedIn",
-    blurb:
-      "Referral partners, probate attorneys, and property managers reach out here more than people expect. It's easy to miss because most owners only check LinkedIn once or twice a day.",
-  },
 ] as const;
 
 type TabId = (typeof tabs)[number]["id"];

@@ -29,8 +29,8 @@ const painPoints = [
   },
   {
     icon: LayoutGrid,
-    title: "Leads scattered across five apps",
-    body: "Text messages, a Facebook inbox, WhatsApp, email, and LinkedIn all filling up at once. Checking all of them constantly isn't a job, it's a full time distraction from actually closing deals.",
+    title: "Leads scattered across four apps",
+    body: "Text messages, a Facebook inbox, WhatsApp, and email all filling up at once. Checking all of them constantly isn't a job, it's a full time distraction from actually closing deals.",
   },
   {
     icon: Hourglass,
@@ -56,9 +56,9 @@ const stats = [
     detail: "nights, weekends, and while you're on another call",
   },
   {
-    value: "5",
+    value: "4",
     label: "Channels covered",
-    detail: "text, email, WhatsApp, Facebook, and LinkedIn, all in one place",
+    detail: "text, email, WhatsApp, and Facebook, all in one place",
   },
   {
     value: "0",
@@ -94,7 +94,7 @@ const processSteps = [
   {
     icon: Settings2,
     title: "Your channels get connected",
-    body: "Text, email, WhatsApp, Facebook, and LinkedIn are wired into one system, using your existing numbers and accounts wherever possible.",
+    body: "Text, email, WhatsApp, and Facebook are wired into one system, using your existing numbers and accounts wherever possible.",
   },
   {
     icon: Rocket,
@@ -137,9 +137,9 @@ export default function DemoExperience({
         />
         <p className="mx-auto mt-4 max-w-xl text-base text-muted">
           Real estate leads don't come from one place. They text you, email
-          you, message you on WhatsApp, fill out a Facebook ad, or reach out
-          on LinkedIn through a referral. This walks through what happens on
-          every one of those channels, and where it all ends up.
+          you, message you on WhatsApp, or fill out a Facebook ad. This walks
+          through what happens on every one of those channels, and where it
+          all ends up.
         </p>
       </motion.div>
 

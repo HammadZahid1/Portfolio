@@ -91,14 +91,6 @@ const existingLeads: Lead[] = [
     response: "4 sec",
   },
   {
-    name: "Robert P. (referral)",
-    source: "LinkedIn",
-    motivation: "Probate sale",
-    timeline: "60 to 90 days",
-    status: "Warm",
-    response: "12 sec",
-  },
-  {
     name: "Priya M.",
     source: "Cold list",
     motivation: "Just curious about value",
@@ -140,14 +132,6 @@ const newLeadByChannel: Record<string, Lead> = {
     timeline: "6 weeks",
     status: "Hot",
     response: "4 sec",
-  },
-  LinkedIn: {
-    name: "New Lead: Probate referral",
-    source: "LinkedIn",
-    motivation: "Probate sale",
-    timeline: "60 to 90 days",
-    status: "Warm",
-    response: "12 sec",
   },
 };
 

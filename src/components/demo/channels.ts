@@ -1,4 +1,4 @@
-import { MessageSquare, Megaphone, Handshake, MessageCircle } from "lucide-react";
+import { MessageSquare, Megaphone, MessageCircle } from "lucide-react";
 import type { ChatChannel } from "./ChatThreadDemo";
 
 export const textChannel: ChatChannel = {
@@ -141,45 +141,8 @@ export const facebookChannel: ChatChannel = {
   ],
 };
 
-export const linkedinChannel: ChatChannel = {
-  id: "linkedin",
-  label: "LinkedIn",
-  icon: Handshake,
-  leadName: "LinkedIn Message",
-  statusLabel: "connected",
-  aiBubbleClassName: "bg-sky-700/90 text-white",
-  accentClassName: "bg-sky-600/15 text-sky-400",
-  responseTime: "12 seconds",
-  qualifiedTitle: "Lead qualified: WARM",
-  qualifiedNote: "Probate referral · 60 to 90 day timeline",
-  footerNote: "Sample LinkedIn conversation · useful for referral partners and off market deal flow",
-  script: [
-    {
-      sender: "lead",
-      text: "Hi, I have a client going through probate on a property in Denton county, they mentioned they might want a fast cash sale instead of listing. Is this something you handle?",
-    },
-    {
-      sender: "ai",
-      text: "Hi Robert, thanks for thinking of us! Yes, probate sales are a big part of what we do, happy to make this easy for your client. Do you know the property's condition, and whether they have a preferred timeline?",
-    },
-    {
-      sender: "lead",
-      text: "I believe it needs some updating, nothing major. They'd like to close within 60 to 90 days once probate clears.",
-    },
-    {
-      sender: "ai",
-      text: "That timeline works well for us. If it's alright with you, I'll have our acquisitions lead reach out directly to your client this week, no pressure, just information.",
-    },
-    {
-      sender: "lead",
-      text: "That would be great, I'll let them know to expect a call.",
-    },
-  ],
-};
-
 export const chatChannels: ChatChannel[] = [
   textChannel,
   whatsappChannel,
   facebookChannel,
-  linkedinChannel,
 ];
